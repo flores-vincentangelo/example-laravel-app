@@ -275,13 +275,21 @@
         @endif
     </body> -->
     <body>
-        Hello world
-        <?php
-            echo "hello world";
-            // $db2 = new SQLite3();
-        
-        
-        
-        ?>
+        @auth
+            You are logged in
+            <form action="/logout" method="POST">
+                @csrf
+                <button>Log out</button>
+            </form>
+        @endauth
+
+        @guest
+            you are the guest
+            <div>
+                <a href="/register">
+                    Register
+                </a>
+            </div>
+        @endguest
     </body>
 </html>

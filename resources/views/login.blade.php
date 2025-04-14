@@ -6,6 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    This is the login page
+    <form action="/login" method="POST">
+        @csrf
+        <input type="text" name="email" placeholder="Email">
+        <input type="password" name="password" id="password" placeholder="Password">
+        <button>Log in</button>
+    </form>
 </body>
 </html>
