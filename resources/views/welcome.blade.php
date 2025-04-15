@@ -281,6 +281,15 @@
                 @csrf
                 <button>Log out</button>
             </form>
+
+            <div>
+                <form action="/create-post" method="post">
+                    @csrf
+                    <input type="text" name="title" placeholder="post title">
+                    <textarea name="body" id="body" placeholder="body content..."></textarea>
+                    <button>Save Post</button>
+                </form>
+            </div>
         @endauth
 
         @guest
@@ -288,6 +297,12 @@
             <div>
                 <a href="/register">
                     Register
+                </a>
+            </div>
+
+            <div>
+                <a href="/login">
+                    Login
                 </a>
             </div>
         @endguest
